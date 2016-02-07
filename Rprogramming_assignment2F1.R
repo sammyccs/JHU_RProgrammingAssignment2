@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) { # a function to set an inverse matri
     inv_m <- NULL
     set <- function(y) {
         x <<- y; # if two matrices are identical, skip the following matrix 
-        inv_m <<- NULL; ( # set it as null
+        inv_m <<- NULL; # set it as null
     }
     get <- function() return(x); 
     setinv <- function(inv) inv_m <<- inv;# set a funtion to inverse the matrix
@@ -35,6 +35,5 @@ cacheSolve <- function(x, ...) { # a function to cache the inverse of matrix
     inv_m <- solve(data, ...)# set a function solve for its inverse from data 
     x$setinv(inv_m)
     return(inv_m)# retrun the inverse matrix
-
 }
 
